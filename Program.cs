@@ -6,7 +6,8 @@ app.Urls.Add("http://0.0.0.0:8080");
 
 app.MapGet("/", () =>
 {
-    return "Hello World!";
+    Console.WriteLine(">>> Log from inside the container!");
+    return $"Hello World @ UTC: {DateTime.UtcNow}!";
 })
 .WithName("hello");
 
